@@ -1,8 +1,8 @@
 import json
 import requests
+import folium
 from decouple import config
 from geopy import distance
-import folium
 
 
 USER_EMAIL = config("USER_EMAIL")
