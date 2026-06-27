@@ -50,7 +50,7 @@ def fetch_coordinates(address):
 
 
 def load_coffee_data(file_path="coffee.json"):
-    with open("coffee.json", "r", encoding="CP1251") as coffee_file:
+    with open(file_path, "r", encoding="CP1251") as coffee_file:
         coffee_contents = coffee_file.read()
         coffee_list = json.loads(coffee_contents)
 
@@ -58,7 +58,7 @@ def load_coffee_data(file_path="coffee.json"):
 
 
 def coffee_info(coordinate, coffee_list):
-    nuw_list_caffee = []
+    new_list_caffee = []
 
     for coffee in coffee_list:
         coffee_longitude, coffee_latitude = coffee["geoData"]["coordinates"]
@@ -68,7 +68,7 @@ def coffee_info(coordinate, coffee_list):
             coordinate
         ).km
 
-        nuw_list_caffee.append(
+        new_list_caffee.append(
             {
                 'title': coffee.get("Name"),
                 'distance': distance_km,
@@ -77,7 +77,7 @@ def coffee_info(coordinate, coffee_list):
             }
         )
 
-    return nuw_list_caffee
+    return new_list_caffee
 
 
 def main():
